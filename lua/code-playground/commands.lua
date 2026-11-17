@@ -276,6 +276,9 @@ M.typescript = {
 	},
 }
 
+M.js = M.typescript
+M.ts = M.typescript
+
 M.fsharp = {
 	handle = function()
 		local def = fsharp.run()
