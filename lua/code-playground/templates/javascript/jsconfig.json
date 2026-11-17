@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "lib": [
+            "ESNext",
+            "DOM",
+            "DOM.Iterable"
+        ],
+        "checkJs": true,
+        "useDefineForClassFields": true,
+        "skipLibCheck": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "moduleDetection": "force",
+        "jsx": "react-jsx",
+        "strict": true,
+        "noFallthroughCasesInSwitch": true
+    }
+}

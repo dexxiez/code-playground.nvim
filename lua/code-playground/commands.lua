@@ -4,6 +4,7 @@ local python = require("code-playground.languages.python")
 local java = require("code-playground.languages.java")
 local zig = require("code-playground.languages.zig")
 local typescript = require("code-playground.languages.typescript")
+local javascript = require("code-playground.languages.javascript")
 local fsharp = require("code-playground.languages.fsharp")
 local elixir = require("code-playground.languages.elixir")
 local options_manager = require("code-playground.options")
@@ -276,8 +277,24 @@ M.typescript = {
 	},
 }
 
-M.js = M.typescript
 M.ts = M.typescript
+
+M.javascript = {
+	handle = function()
+		local def = javascript.run()
+		open_workspace(def.file, def.command)
+	end,
+	subcommands = {
+		reset = {
+			handle = function()
+				javascript.reset()
+				M.javascript.handle("", {})
+			end,
+		},
+	},
+}
+
+M.js = M.javascript
 
 M.fsharp = {
 	handle = function()
